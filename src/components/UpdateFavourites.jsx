@@ -5,10 +5,7 @@ import { Context } from "../context/Context";
 import style from "../styles/UpdateFavourites.module.css";
 
 function UpdateFavourites() {
-  const [value, setValue, removeValue] = useLocalStorage("FavPokes", ""
-    // "key",
-    // "default value"
-  );
+  const [value, setValue, removeValue] = useLocalStorage("FavPokes", "");
   const [context, updateContext] = useContext(Context);
   const singlePokemon = context.singlePokemon.pokemon;
   const favPokes = context.pokemonFavList;
@@ -26,10 +23,10 @@ function UpdateFavourites() {
 
   function addToFavourites(addedPoke) {
     updateContext({
-      pokemonFavList: [...context.pokemonFavList, addedPoke],
+      pokemonFavList: [...favPokes, addedPoke],
     });
     setAddFavourite(true);
-    setValue("favPokes", "hej");
+    //setValue(favPokes);
   }
 
   function deleteFromFavourites(deletedPoke) {
@@ -41,7 +38,7 @@ function UpdateFavourites() {
       pokemonFavList: newFavPokes,
     });
     setAddFavourite(false);
-    //removeValue(deletedPoke);
+    //setValue(favPokes);
   }
 
   return (

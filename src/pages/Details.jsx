@@ -30,7 +30,7 @@ export default function Details() {
             className={style.pokeImg}
           />
           <div className={style.info}>
-            <p className={style.type}>Type: {singlePokemon.type}</p>
+            <p className={style.type}>Type: {singlePokemon.type[0]} {singlePokemon.type[1]}</p>
             <p className={style.baseHp}>HP: {singlePokemon.base.HP}</p>
             <p className={style.baseAttack}>
               Attack: {singlePokemon.base.Attack}

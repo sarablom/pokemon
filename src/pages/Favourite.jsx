@@ -2,11 +2,25 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../context/Context";
 import style from "../styles/Favourite.module.css";
+import { useLocalStorage } from "react-use-storage";
 
 function Favourite() {
   const [context, updateContext] = useContext(Context);
+  const [value, setValue, removeValue] = useLocalStorage("FavPokes", "");
   const history = useHistory();
   const favPokes = context.pokemonFavList;
+
+  // console.log(value[1]);
+  // console.log("local storage");
+  // for ( let i = 0; i < localStorage.length; i++)   {
+  //   console.log(localStorage.key(i) + localStorage.getItem(localStorage.key(i)));
+  // }
+
+  // const favPokes1 = new Array(localStorage)
+  // // .fill()
+  // // .map(i => localStorage.key(i))
+
+  // console.log(favPokes1);
 
   function DisplayPokes() {
     return favPokes.map((poke, index) => (
