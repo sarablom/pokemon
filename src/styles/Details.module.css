@@ -1,0 +1,50 @@
+.pokeImgContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } 
+  
+  .detailsCard {
+    font-size: 1.2rem;
+    border: 1px solid gray;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 gray;
+    padding: 1rem;
+    display: grid;
+    grid-template-areas: "details-header heart"
+        "img info"
+        "fav-poke fav-poke";
+  }
+
+  .unfilledHeart,
+  .filledHeart {
+    grid-area: heart;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  h1.detailsHeader {
+    grid-area: details-header;
+  }
+
+  .info {
+    grid-area: info;
+  }
+  
+  .pokeImg {
+    max-width: 40vw;
+    grid-area: img;
+    margin: 0 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .detailsCard {
+      grid-template-areas: "details-header"
+          "img"
+          "info"
+          "fav-poke";
+    }
+  }
+  

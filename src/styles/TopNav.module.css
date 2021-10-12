@@ -1,0 +1,21 @@
+.topNav {
+    height: 4rem;
+    max-width: 100vw;
+    background: rgba(239,229,183, .4);
+    background: linear-gradient(180deg, rgba(239,229,183,.6) 2%, rgba(196,209,177,.6) 99%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > a {
+    margin: 0 2rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+a:hover {
+    color: #999;
+}
+  

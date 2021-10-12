@@ -1,0 +1,20 @@
+  
+  .card {
+    border: 1px solid gray;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 gray;
+    padding: 1rem;
+    min-width: 16rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .card > h2 {  
+    text-align: center;
+  }
+  
+  .card:hover {
+    background-color: rgba(208, 200, 233, .5);
+  }

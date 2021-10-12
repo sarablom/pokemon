@@ -1,0 +1,34 @@
+/* Searchbar */
+
+.searchField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  
+  .input {
+    background: rgb(239,229,183);
+    background: linear-gradient(180deg, rgba(239,229,183,.6) 2%, rgba(196,209,177,.6) 99%);
+    font-size: 1.2rem;
+    border: 0;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 5px;  
+    width: 80%;
+  }
+
+  .searchBtn {
+    background: rgb(239,229,183);
+    background: linear-gradient(180deg, rgba(239,229,183,.6) 2%, rgba(196,209,177,.6) 99%);
+    font-size: 1.2rem;
+    border: 0;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 5px;  
+  }
+
+  @media screen and (max-width: 768px) {
+    .input {
+      margin: 1rem;
+    }
+  }

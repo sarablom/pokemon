@@ -1,0 +1,21 @@
+
+.favListItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 gray;
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 90%;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.favPokeImg {
+    height: 2rem;
+    padding-left: 2rem;
+} 
