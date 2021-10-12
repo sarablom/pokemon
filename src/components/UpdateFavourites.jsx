@@ -1,24 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 import { useLocalStorage } from "react-use-storage";
+import { Context } from "../context/Context";
+import style from "../styles/UpdateFavourites.module.css";
 
 function UpdateFavourites() {
-  const [value, setValue, removeValue] = useLocalStorage(
-    "key",
-    "default value"
+  const [value, setValue, removeValue] = useLocalStorage("FavPokes", ""
+    // "key",
+    // "default value"
   );
+  const [context, updateContext] = useContext(Context);
+  const singlePokemon = context.singlePokemon.pokemon;
+  const favPokes = context.pokemonFavList;
   const [addFavourite, setAddFavourite] = useState(false);
-  const [removeFavourite, setRemoveFavourite] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [showMessage, setShowMessage] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
-        setShowMessage("");
-        setIsActive(false);
+      setShowMessage("");
+      setIsActive(false);
     }, 2000);
     return () => clearTimeout(timer);
-}, [showMessage]);
+  }, [showMessage]);
 
   function addToFavourites(addedPoke) {
     updateContext({
@@ -29,15 +33,15 @@ function UpdateFavourites() {
   }
 
   function deleteFromFavourites(deletedPoke) {
-    console.log(deletedPoke.id);
-    const newFavPokes = [...favPokes];
-    newFavPokes.splice(deletedPoke.id, 1);
+    const newFavPokes = favPokes.filter((poke) => poke.id !== deletedPoke.id);
+    // const newFavPokes = [...favPokes];
+    // newFavPokes.splice(deletedPoke.id, 1);
 
     updateContext({
       pokemonFavList: newFavPokes,
     });
     setAddFavourite(false);
-    removeValue(deletedPoke);
+    //removeValue(deletedPoke);
   }
 
   return (
@@ -63,6 +67,9 @@ function UpdateFavourites() {
           }}
         />
       )}
+      <span className={isActive ? style.message : style.hideMessage}>
+        {showMessage || null}
+      </span>
     </div>
   );
 }

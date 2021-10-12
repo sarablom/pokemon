@@ -2,18 +2,18 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import style from "../styles/Details.module.css";
 import { Context } from "../context/Context";
+import UpdateFavourites from "../components/UpdateFavourites";
 
 export default function Details() {
   const [context, updateContext] = useContext(Context);
   const singlePokemon = context.singlePokemon.pokemon;
-  const favPokes = context.pokemonFavList;
 
-  function addToFavourites(addedPoke) {
-    console.log(addedPoke);
-    updateContext({
-      pokemonFavList: [...context.pokemonFavList, addedPoke],
-    });
-  }
+  // function addToFavourites(addedPoke) {
+  //   console.log(addedPoke);
+  //   updateContext({
+  //     pokemonFavList: [...context.pokemonFavList, addedPoke],
+  //   });
+  // }
 
   return (
     <div className={style.pokeImgContainer}>
@@ -22,7 +22,7 @@ export default function Details() {
       </button>
       {singlePokemon && (
         <div className={style.detailsCard}>
-          
+          <UpdateFavourites />
           <h1 className={style.detailsHeader}>{singlePokemon.name}</h1>
           <img
             src={singlePokemon.image.url}
@@ -40,12 +40,12 @@ export default function Details() {
             </p>
             <p className={style.baseSpeed}>Speed: {singlePokemon.base.Speed}</p>
           </div>
-          <button
+          {/* <button
             onClick={() => addToFavourites(singlePokemon)}
             className="btn"
           >
             Save as favourite
-          </button>
+          </button> */}
         </div>
       )}
     </div>

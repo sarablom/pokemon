@@ -1,0 +1,25 @@
+.unfilledHeart,
+.filledHeart {
+  grid-area: heart;
+  font-size: 3rem;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(147, 121, 241);
+}
+
+.message {
+	text-align: center;
+	width: 100%;
+	width: 8rem;
+	font-size: 0.9rem;
+	padding: 0.25rem;
+	background-color: rgb(147, 121, 241);
+	color: rgba(255, 255, 255, 0.6);
+	border-radius: 0.5rem;
+	transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.hideMessage {
+		z-index: -1000;
+}
