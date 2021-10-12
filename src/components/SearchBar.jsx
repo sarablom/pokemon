@@ -21,13 +21,13 @@ function SearchBar() {
   }
 
   return (
-    <form className={style.searchField} onSubmit={onSubmitHandler}>
+    <form className={style.searchField} onChange={onSubmitHandler}>
       <input
         className={style.input}
         type="text"
         placeholder="Enter the name of your favourite Pokemon"
         value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value.trim().toLowerCase())}
+        onChange={(e) => {setSearchInput(e.target.value.trim().toLowerCase())}}
       />
       <input
         type="submit"
